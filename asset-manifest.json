@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/scenic-peaks-counseling/static/css/main.e6c13ad2.css",
+    "main.js": "/scenic-peaks-counseling/static/js/main.ac89bd3b.js",
+    "static/js/453.96539183.chunk.js": "/scenic-peaks-counseling/static/js/453.96539183.chunk.js",
+    "index.html": "/scenic-peaks-counseling/index.html",
+    "main.e6c13ad2.css.map": "/scenic-peaks-counseling/static/css/main.e6c13ad2.css.map",
+    "main.ac89bd3b.js.map": "/scenic-peaks-counseling/static/js/main.ac89bd3b.js.map",
+    "453.96539183.chunk.js.map": "/scenic-peaks-counseling/static/js/453.96539183.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.ac89bd3b.js"
+  ]
+}
