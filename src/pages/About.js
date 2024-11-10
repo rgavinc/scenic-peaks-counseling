@@ -1,10 +1,13 @@
+import { Typography } from "@mui/material";
 import React from "react";
 
 const About = () => (
-  <div>
-    <h1>About Scenic Peaks Counseling</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-  </div>
+  <>
+    <Typography variant="h4">About Scenic Peaks Counseling</Typography>
+    <Typography>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+    </Typography>
+  </>
 );
 
 export default About;

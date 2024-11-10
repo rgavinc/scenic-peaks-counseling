@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import { Box } from "@mui/material";
 import NotFound from "./pages/NotFound";
 
 const theme = createTheme({
@@ -23,13 +24,23 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
+      <Box
+        sx={{
+          maxWidth: "1280px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginX: "auto",
+        }}
+      >
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
+      </Box>
     </ThemeProvider>
   );
 }

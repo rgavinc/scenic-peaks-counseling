@@ -1,9 +1,10 @@
 import React from "react";
+import { Typography } from "@mui/material";
 
 const NotFound = () => (
-  <div>
-    <h1>404 - Page Not Found</h1>
-    <p>Sorry, the page you are looking for does not exist.</p>
-  </div>
+  <>
+    <Typography variant="h4">404 - Page Not Found</Typography>
+    <Typography>Sorry, the page you are looking for does not exist.</Typography>
+  </>
 );
 export default NotFound;
