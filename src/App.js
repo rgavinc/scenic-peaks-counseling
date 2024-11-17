@@ -46,8 +46,13 @@ function Menu() {
   ];
 
   return (
-    <AppBar position="static">
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+    <AppBar position="fixed" sx={{ height: "64px", marginBottom: "64px" }}>
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
         <IconButton
           edge="start"
           color="inherit"
@@ -102,6 +107,7 @@ function App() {
         <Box
           sx={{
             maxWidth: "1280px",
+            paddingTop: "64px",
             width: "100vw",
             height: "100vh",
             display: "flex",
