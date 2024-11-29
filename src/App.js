@@ -2,6 +2,7 @@ import React from "react";
 import {
   HashRouter as Router,
   Route,
+  useLocation,
   Routes,
   NavLink,
   useNavigate,
@@ -20,6 +21,7 @@ import {
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Emdr from "./pages/Emdr";
 
 const theme = createTheme({
   palette: {
@@ -37,14 +39,14 @@ const theme = createTheme({
 function Menu() {
   const navigate = useNavigate();
   const isXs = useMediaQuery("(max-width:650px)");
-
+  const location = useLocation();
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" }, // Add Services page later
     { name: "Contact", path: "/contact" }, // Add Contact page later
+    { name: "EMDR", path: "/emdr" },
   ];
-
   return (
     <AppBar position="fixed" sx={{ height: "64px", marginBottom: "64px" }}>
       <Toolbar
@@ -99,30 +101,35 @@ function Menu() {
 }
 
 function App() {
+  const location = useLocation();
+  const useFullScreen = location.pathname === "/emdr";
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Menu />
-        <Box
-          sx={{
-            maxWidth: "1280px",
-            paddingTop: "64px",
-            width: "100vw",
-            height: "100vh",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            marginX: "auto",
-          }}
-        >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Box>
-      </Router>
+      {!useFullScreen && <Menu />}
+      <Box
+        sx={
+          useFullScreen
+            ? {}
+            : {
+                maxWidth: "1280px",
+                paddingTop: "64px",
+                width: "100vw",
+                height: "100vh",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                marginX: "auto",
+              }
+        }
+      >
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/emdr" element={<Emdr />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Box>
     </ThemeProvider>
   );
 }
