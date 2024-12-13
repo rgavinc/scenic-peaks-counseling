@@ -45,7 +45,7 @@ function Menu() {
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" }, // Add Services page later
     { name: "Contact", path: "/contact" }, // Add Contact page later
-    { name: "EMDR", path: "/emdr" },
+    { name: "ART", path: "/emdr" },
   ];
   return (
     <AppBar position="fixed" sx={{ height: "64px", marginBottom: "64px" }}>
