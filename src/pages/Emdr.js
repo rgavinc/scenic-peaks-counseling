@@ -42,12 +42,9 @@ const Emdr = () => {
   const updateValue = (setter, paramName) => (e, newValue) => {
     setter(newValue);
 
-    // Update URL
     const urlParams = new URLSearchParams(window.location.search);
     urlParams.set(paramName, newValue);
     window.history.replaceState({}, "", `?${urlParams.toString()}`);
-
-    // Update local storage
     localStorage.setItem(paramName, newValue);
   };
 
@@ -187,7 +184,7 @@ const Emdr = () => {
           borderRadius: "50%",
           animation: isPaused
             ? "none"
-            : `moveHorizontal ${speed}s linear infinite`,
+            : `moveHorizontal ${6 - speed}s linear infinite`,
         }}
       />
 
@@ -231,7 +228,7 @@ const Emdr = () => {
               width: "100%",
             }}
           >
-            <Stack spacing={2} direction="column">
+            <Stack spacing={2} direction="column" width={200}>
               {/* Pause/Play Button */}
               <Box
                 sx={{
@@ -257,7 +254,7 @@ const Emdr = () => {
               {/* Speed Slider */}
               <Box>
                 <Typography id="speed-slider" gutterBottom>
-                  Speed: {speed} seconds
+                  Speed:
                 </Typography>
                 <Slider
                   value={speed}
@@ -265,14 +262,13 @@ const Emdr = () => {
                   step={0.1}
                   min={0.5}
                   max={5}
-                  valueLabelDisplay="auto"
                 />
               </Box>
 
               {/* Size Slider */}
               <Box>
                 <Typography id="size-slider" gutterBottom>
-                  Size: {size} pixels
+                  Size:
                 </Typography>
                 <Slider
                   value={size}
@@ -280,7 +276,6 @@ const Emdr = () => {
                   step={10}
                   min={20}
                   max={200}
-                  valueLabelDisplay="auto"
                 />
               </Box>
             </Stack>
