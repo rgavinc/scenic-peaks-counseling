@@ -32,7 +32,7 @@ const Emdr = () => {
     return storedValue ? parseFloat(storedValue) : defaultValue;
   };
 
-  const [speed, setSpeed] = useState(getInitialValue("speed", 2));
+  const [speed, setSpeed] = useState(getInitialValue("speed", 4.5));
   const [size, setSize] = useState(getInitialValue("size", 100));
   const [isPaused, setIsPaused] = useState(false);
   const [isControlsOpen, setIsControlsOpen] = useState(true);
@@ -260,8 +260,8 @@ const Emdr = () => {
                   value={speed}
                   onChange={updateValue(setSpeed, "speed")}
                   step={0.1}
-                  min={0.5}
-                  max={5}
+                  min={4.5}
+                  max={5.5}
                 />
               </Box>
 
